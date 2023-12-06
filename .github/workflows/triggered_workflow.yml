@@ -1,0 +1,13 @@
+name: Triggered Workflow
+on:
+  workflow_run:
+    workflows: ["Main Workflow"]
+    types:
+      - completed
+
+jobs:
+  triggered_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: echo "This is Step 1 of the Triggered Workflow"
